@@ -10,7 +10,7 @@ Each supporter can pick a team (either red or black) and has to **tap** has much
 
 The number of **taps** of every supporters in each team is accumulated for the duration of the game (20 seconds) and shown in **real time** on the big screens.
 
-The server automatically start a **20 seconds** game, with a pause of **5 seconds**.
+The server continuously start a **20 seconds** game, with a pause of **5 seconds**.
 
 # How to use
 
