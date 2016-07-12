@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stade Toulousain</title>
+    <link rel="stylesheet" type="text/less" href="style.less">
+    <link rel="icon" href="logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  </head>
+  <body>
+    <div class="progress-container">
+      <span class="percentage" id="left" style="display: none;">50</span>
+      <span class="percentage" id="right" style="display: none;">50</span>
+      <div class="radial-progress" data-progress="0" style="display: none;">
+	<div class="circle">
+	  <div class="mask full">
+	    <div class="fill"></div>
+	  </div>
+	  <div class="mask half">
+	    <div class="fill"></div>
+	    <div class="fill fix"></div>
+	  </div>
+	  <div class="shadow"></div>
+	</div>
+	<div class="inset">
+	  <span id="timer"></span>
+	</div>
+      </div>
+    </div>
+    <div class="buttons">
+      <form id="red" action="" style="display: none;">
+	<button class="button">Tap!</button>
+      </form>
+      <form id="black" action="" style="display: none;">
+	<button class="button">Tap!</button>
+      </form>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.1/less.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>

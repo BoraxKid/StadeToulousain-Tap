@@ -1,0 +1,263 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic");
+
+@background-color: #fbfbfb;
+@shadow-size: 2px;
+@shadow-color: #ffffff;
+@logo-url: "logo.png";
+@percentage-font-size: 22px;
+@percentage-text-width: 57px;
+
+@default-main-color: #f7f7f7;
+@default-gradient-color1: #f7f7f7;
+@default-gradient-color2: #e7e7e7;
+@font-color: #000000;
+
+@red-main-color: #ef3f23;
+@red-gradient-color1: #ef3f23;
+@red-gradient-color2: #8f2515;
+@red-hover-color: #d7381f;
+@red-active-color: #bf321c;
+@red-font-color: #000000;
+
+@black-main-color: #000000;
+@black-gradient-color1: #4c4c4c;
+@black-gradient-color2: #000000;
+@black-hover-color: #323232;
+@black-active-color: #191919;
+@black-font-color: @red-main-color;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 13px Helvetica, Arial;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: @background-color;
+}
+
+.progress-container {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    max-height: 100vh;
+    max-width: 100vh;
+    top: 0px;
+    margin: auto;
+    height: 100vw;
+    width: 100vw;
+}
+
+.percentage {
+    position: absolute;
+    width: @percentage-text-width;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-weight: 800;
+    font-size: @percentage-font-size;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: -@shadow-size 0 @shadow-color, 0 @shadow-size @shadow-color, @shadow-size 0 @shadow-color, 0 -@shadow-size @shadow-color;
+}
+
+.percentage:after {
+    content: "%";
+}
+
+.percentage#left {
+    left: 0;
+    color: @red-main-color;
+}
+
+.percentage#right {
+    right: 0;
+    color: @black-main-color;
+}
+
+#timer {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    vertical-align: top;
+    text-align: center;
+    font-weight: 800;
+    font-size: 22px;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: @font-color;
+    text-shadow: -@shadow-size 0 @shadow-color, 0 @shadow-size @shadow-color, @shadow-size 0 @shadow-color, 0 -@shadow-size @shadow-color;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    background-color: @default-main-color;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@default-gradient-color1), to(@default-gradient-color2));
+    background-image: -webkit-linear-gradient(top, @default-gradient-color1, @default-gradient-color2);
+    background-image: -moz-linear-gradient(top, @default-gradient-color1, @default-gradient-color2);
+    background-image: -ms-linear-gradient(top, @default-gradient-color1, @default-gradient-color2);
+    background-image: -o-linear-gradient(top, @default-gradient-color1, @default-gradient-color2);
+    color: @font-color;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 50%;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    border: none;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    max-height: 90vh;
+    max-width: 90vh;
+    top: 0px;
+    margin: auto;
+    height: 90vw;
+    width: 90vw;
+}
+
+#red .button {
+    background-color: @red-main-color;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@red-gradient-color1), to(@red-gradient-color2));
+    background-image: -webkit-linear-gradient(top, @red-gradient-color1, @red-gradient-color2);
+    background-image: -moz-linear-gradient(top, @red-gradient-color1, @red-gradient-color2);
+    background-image: -ms-linear-gradient(top, @red-gradient-color1, @red-gradient-color2);
+    background-image: -o-linear-gradient(top, @red-gradient-color1, @red-gradient-color2);
+    color: @red-font-color;
+}
+
+#black .button {
+    background-color: @black-main-color;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@black-gradient-color1), to(@black-gradient-color2));
+    background-image: -webkit-linear-gradient(top, @black-gradient-color1, @black-gradient-color2);
+    background-image: -moz-linear-gradient(top, @black-gradient-color1, @black-gradient-color2);
+    background-image: -ms-linear-gradient(top, @black-gradient-color1, @black-gradient-color2);
+    background-image: -o-linear-gradient(top, @black-gradient-color1, @black-gradient-color2);
+    color: @black-font-color;
+}
+
+.button:before {
+    content: "";
+    display: block;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    bottom: -18px;
+    right: -18px;
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: inset 0px 8px 48px #ddd;
+}
+
+#red .button:hover {
+    text-decoration: none;
+    color: @red-font-color;
+    background: @red-hover-color;
+}
+
+#black .button:hover {
+    text-decoration: none;
+    color: @black-font-color;
+    background: @black-hover-color;
+}
+
+#red .button:active {
+    text-decoration: none;
+    color: @red-font-color;
+    background: @red-active-color;
+}
+
+#black .button:active {
+    text-decoration: none;
+    color: @black-font-color;
+    background: @black-active-color;
+}
+
+.radial-progress {
+    @circle-size: 400px;
+    @circle-background: @black-main-color;
+    @circle-color: @red-main-color;
+    @inset-size: 280px;
+    @inset-color: @background-color;
+    @transition-length: 0.5s;
+    @shadow: 6px 6px 10px rgba(0,0,0,0.2);
+    @percentage-color: @red-main-color;
+    @percentage-font-size: 22px;
+    @percentage-text-width: 57px;
+
+    width:  @circle-size;
+    height: @circle-size;
+    transform-origin: 50% 50% 0px;
+    transform: rotate(180deg);
+    background-color: @circle-background;
+    border-radius: 50%;
+    
+    .circle {
+	.mask, .fill, .shadow {
+	    width:    @circle-size;
+	    height:   @circle-size;
+	    position: absolute;
+	    border-radius: 50%;
+	}
+	.shadow {
+	    box-shadow: @shadow inset;
+	}
+	.mask, .fill {
+	    -webkit-backface-visibility: hidden;
+	    transition: -webkit-transform @transition-length;
+	    transition: -ms-transform @transition-length;
+	    transition: transform @transition-length;
+	    border-radius: 50%;
+	}
+	.mask {
+	    clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+	    .fill {
+		clip: rect(0px, @circle-size/2, @circle-size, 0px);
+		background-color: @circle-color;
+	    }
+	}
+    }
+    .inset {
+	width:       @inset-size;
+	height:      @inset-size;
+	position:    absolute;
+	margin-left: (@circle-size - @inset-size)/2;
+	margin-top:  (@circle-size - @inset-size)/2;
+
+	background-image: url(@logo-url);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: @inset-color;
+	border-radius: 50%;
+	box-shadow: @shadow;
+    }
+
+    @i: 0;
+    @increment: 180deg / 100;
+    .loop (@i) when (@i <= 100) {
+	&[data-progress="@{i}"] {
+	    .circle {
+		.mask.full, .fill {
+		    -webkit-transform: rotate(@increment * @i);
+		    -ms-transform: rotate(@increment * @i);
+		    transform: rotate(@increment * @i);
+		}	
+		.fill.fix {
+		    -webkit-transform: rotate(@increment * @i * 2);
+		    -ms-transform: rotate(@increment * @i * 2);
+		    transform: rotate(@increment * @i * 2);
+		}
+	    }
+	    .inset {
+		transform: rotate(-180deg);
+	    }
+	}
+	.loop(@i + 1);
+    }
+    .loop(@i);
+}
