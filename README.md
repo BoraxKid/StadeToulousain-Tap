@@ -17,6 +17,7 @@ The server automatically start a **20 seconds** game, with a pause of **5 second
 To host a game, you need to have [Node.js](https://nodejs.org/) and the depencies:
 - socket.io
 - express
+
 Exact versions of these dependencies can be found in [package.json](package.json)
 
 Using the command `node index` will open a server, with the first printed lines being the **ip** and the **port** the supporters will have to use
